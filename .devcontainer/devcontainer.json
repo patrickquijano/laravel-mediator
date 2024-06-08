@@ -1,0 +1,79 @@
+{
+  "name": "PHP - Laravel",
+  "dockerComposeFile": [
+    "../docker-compose.devcontainer.yml"
+  ],
+  "service": "php",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "amiralizadeh9480.laravel-extra-intellisense",
+        "bmewburn.vscode-intelephense-client",
+        "codezombiech.gitignore",
+        "codingyu.laravel-goto-view",
+        "damianbal.vs-phpclassgen",
+        "dansysanalyst.pest-snippets",
+        "donjayamanne.githistory",
+        "dotenv.dotenv-vscode",
+        "eamodio.gitlens",
+        "henriiik.vscode-sort",
+        "junstyle.php-cs-fixer",
+        "m1guelpf.better-pest",
+        "MehediDracula.php-constructor",
+        "MehediDracula.php-namespace-resolver",
+        "ms-azuretools.vscode-docker",
+        "neilbrayfield.php-docblocker",
+        "redhat.vscode-xml",
+        "xdebug.php-debug"
+      ],
+      "settings": {
+        "dotenv.enableAutocloaking": false,
+        "files.associations": {
+          ".env*": "dotenv"
+        },
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true,
+        "git.autofetch": "all",
+        "git.autofetchPeriod": 5,
+        "git.confirmSync": false,
+        "git.enableSmartCommit": true,
+        "git.fetchOnPull": true,
+        "git.pruneOnFetch": true,
+        "git.pullBeforeCheckout": true,
+        "git.showPushSuccessNotification": true,
+        "php-cs-fixer.allowRisky": true,
+        "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+        "php-cs-fixer.lastDownload": 1,
+        "php-cs-fixer.onsave": true,
+        "php.suggest.basic": false,
+        "redhat.telemetry.enabled": true,
+        "[dockercompose]": {
+          "editor.defaultFormatter": "ms-azuretools.vscode-docker",
+          "editor.tabSize": 2
+        },
+        "[json]": {
+          "editor.defaultFormatter": "vscode.json-language-features",
+          "editor.tabSize": 2
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "vscode.json-language-features",
+          "editor.tabSize": 2
+        },
+        "[markdown]": {
+          "editor.defaultFormatter": "vscode.markdown-language-features"
+        },
+        "[php]": {
+          "editor.defaultFormatter": "junstyle.php-cs-fixer"
+        },
+        "[xml]": {
+          "editor.tabSize": 2
+        }
+      }
+    }
+  }
+}
