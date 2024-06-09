@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PatrickQuijano\LaravelCQRS\Facades;
+namespace PatrickQuijano\LaravelMediator\Facades;
 
 use Illuminate\Support\Facades\Facade as AbstractFacade;
-use PatrickQuijano\LaravelCQRS\Contracts\Buses\CommandBus as BusesCommandBus;
+use PatrickQuijano\LaravelMediator\Contracts\Buses\CommandBus as BusesCommandBus;
 
 class CommandBus extends AbstractFacade
 {

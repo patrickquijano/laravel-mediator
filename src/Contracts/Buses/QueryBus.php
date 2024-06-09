@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PatrickQuijano\LaravelCQRS\Contracts\Buses;
+namespace PatrickQuijano\LaravelMediator\Contracts\Buses;
 
-use PatrickQuijano\LaravelCQRS\Abstracts\Buses\Query;
+use PatrickQuijano\LaravelMediator\Abstracts\Buses\Query;
 
 interface QueryBus
 {

@@ -2,16 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PatrickQuijano\LaravelCQRS\Tests\Unit\Facades;
+namespace PatrickQuijano\LaravelMediator\Tests\Unit\Facades;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Bus;
-use PatrickQuijano\LaravelCQRS\Abstracts\Buses\Query;
-use PatrickQuijano\LaravelCQRS\Facades\QueryBus;
-use PatrickQuijano\LaravelCQRS\Tests\Unit\TestCase as AbstractTestCase;
-use PHPUnit\Framework\Attributes\CoversClass;
+use PatrickQuijano\LaravelMediator\Abstracts\Buses\Query;
+use PatrickQuijano\LaravelMediator\Facades\QueryBus;
+use PatrickQuijano\LaravelMediator\Tests\Unit\TestCase as AbstractTestCase;
 
-#[CoversClass(QueryBus::class)]
 class QueryBusTest extends AbstractTestCase
 {
     public function test_dispatch_method_returns_a_collection_instance(): void

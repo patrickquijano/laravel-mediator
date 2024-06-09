@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PatrickQuijano\LaravelCQRS\Tests\Unit;
+namespace PatrickQuijano\LaravelMediator\Tests\Unit;
 
 use Orchestra\Testbench\TestCase as AbstractTestCase;
 
