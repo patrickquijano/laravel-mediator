@@ -1,0 +1,38 @@
+{
+    "name": "patrickquijano/laravel-cqrs",
+    "description": "A Command and Query Responsibility Segregation (CQRS) implementation for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PatrickQuijano\\LaravelCQRS\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PatrickQuijano\\LaravelCQRS\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Patrick Quijano",
+            "email": "6316829+patrickquijano@users.noreply.github.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PatrickQuijano\\LaravelCQRS\\LaravelCQRSServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^11.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.16",
+        "friendsofphp/php-cs-fixer": "^3.58"
+    }
+}
