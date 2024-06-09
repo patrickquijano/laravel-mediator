@@ -1,16 +1,16 @@
 {
-    "name": "patrickquijano/laravel-cqrs",
-    "description": "A Command and Query Responsibility Segregation (CQRS) implementation for Laravel",
+    "name": "patrickquijano/laravel-mediator",
+    "description": "A mediator pattern implementation for Laravel",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "PatrickQuijano\\LaravelCQRS\\": "src/"
+            "PatrickQuijano\\LaravelMediator\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PatrickQuijano\\LaravelCQRS\\Tests\\": "tests/"
+            "PatrickQuijano\\LaravelMediator\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "PatrickQuijano\\LaravelCQRS\\LaravelCQRSServiceProvider"
+                "PatrickQuijano\\LaravelMediator\\Providers\\LaravelMediatorServiceProvider"
             ]
         }
     },
@@ -32,7 +32,13 @@
         "illuminate/support": "^11.0"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.58",
+        "orchestra/testbench": "^9.0",
         "laravel/pint": "^1.16",
-        "friendsofphp/php-cs-fixer": "^3.58"
+        "nunomaduro/collision": "^8.1"
+    },
+    "scripts": {
+        "pint": "@php vendor/bin/pint",
+        "unit-test": "@php vendor/bin/testbench package:test --coverage --min=80"
     }
 }
