@@ -19,7 +19,7 @@
             "email": "6316829+patrickquijano@users.noreply.github.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": "^8.3"
     }
