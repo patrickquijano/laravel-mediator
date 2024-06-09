@@ -23,7 +23,11 @@
         "laravel": {
             "providers": [
                 "PatrickQuijano\\LaravelMediator\\Providers\\LaravelMediatorServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "CommandBus": "PatrickQuijano\\LaravelMediator\\Facades\\CommandBus",
+                "QueryBus": "PatrickQuijano\\LaravelMediator\\Facades\\QueryBus"
+            }
         }
     },
     "minimum-stability": "stable",
