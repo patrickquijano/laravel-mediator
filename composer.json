@@ -19,6 +19,13 @@
             "email": "6316829+patrickquijano@users.noreply.github.com"
         }
     ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PatrickQuijano\\LaravelCQRS\\LaravelCQRSServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "stable",
     "require": {
         "php": "^8.3",
