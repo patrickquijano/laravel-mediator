@@ -22,8 +22,12 @@
     "extra": {
         "laravel": {
             "providers": [
-                "PatrickQuijano\\LaravelCQRS\\LaravelCQRSServiceProvider"
-            ]
+                "PatrickQuijano\\LaravelCQRS\\Providers\\LaravelCQRSServiceProvider"
+            ],
+            "aliases": {
+                "CommandBus": "PatrickQuijano\\LaravelCQRS\\Facade\\CommandBus",
+                "QueryBus": "PatrickQuijano\\LaravelCQRS\\Facade\\QueryBus"
+            }
         }
     },
     "minimum-stability": "stable",
@@ -32,8 +36,13 @@
         "illuminate/support": "^11.0"
     },
     "require-dev": {
-        "laravel/pint": "^1.16",
         "friendsofphp/php-cs-fixer": "^3.58",
-        "phpunit/phpunit": "^11"
+        "orchestra/testbench": "^9.0",
+        "laravel/pint": "^1.16",
+        "nunomaduro/collision": "^8.1"
+    },
+    "scripts": {
+        "pint": "@php vendor/bin/pint",
+        "unit-test": "@php vendor/bin/testbench package:test --coverage --min=80"
     }
 }
