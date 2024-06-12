@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PatrickQuijano\LaravelMediator\Buses;
+namespace LaravelMediator\Buses;
 
 use Illuminate\Support\Facades\Bus;
-use PatrickQuijano\LaravelMediator\Abstracts\Buses\Query;
-use PatrickQuijano\LaravelMediator\Contracts\Buses\QueryBus as QueryBusContract;
+use LaravelMediator\Abstracts\Buses\Query;
+use LaravelMediator\Contracts\Buses\QueryBus as QueryBusContract;
 
 class QueryBus implements QueryBusContract
 {

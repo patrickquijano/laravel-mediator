@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PatrickQuijano\LaravelMediator\Contracts\Buses;
+namespace LaravelMediator\Contracts\Buses;
 
-use PatrickQuijano\LaravelMediator\Abstracts\Buses\Command;
+use LaravelMediator\Abstracts\Buses\Command;
 
 interface CommandBus
 {

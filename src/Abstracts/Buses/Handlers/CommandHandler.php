@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PatrickQuijano\LaravelMediator\Abstracts\Buses\Handlers;
+namespace LaravelMediator\Abstracts\Buses\Handlers;
 
 abstract class CommandHandler
 {

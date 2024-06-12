@@ -18,22 +18,22 @@ composer require patrickquijano/laravel-mediator
 
 1. Define Commands and Queries:
 
-    Create separate classes extending ```PatrickQuijano\Abstracts\Buses\Command``` and ```PatrickQuijano\Abstracts\Buses\Query``` for your commands and queries, respectively.
+    Create separate classes extending ```Abstracts\Buses\Command``` and ```Abstracts\Buses\Query``` for your commands and queries, respectively.
 
 2. Implement Handlers:
 
-    Implement your handlers extending a relevant abstract handler class like ```PatrickQuijano\Abstracts\Handlers\CommandHandler``` or ```PatrickQuijano\Abstracts\Handlers\QueryHandler```. These handlers will contain the logic for processing commands and queries.
+    Implement your handlers extending a relevant abstract handler class like ```Abstracts\Handlers\CommandHandler``` or ```Abstracts\Handlers\QueryHandler```. These handlers will contain the logic for processing commands and queries.
 
 3. Register Handlers (Extend Service Provider):
 
-    Create a new service provider extending ```PatrickQuijano\LaravelMediator\Abstracts\Providers\HandlersServiceProvider```. In the ```$handlers``` property of your service provider, register your command and query handlers with their corresponding commands and queries.
+    Create a new service provider extending ```LaravelMediator\Abstracts\Providers\HandlersServiceProvider```. In the ```$handlers``` property of your service provider, register your command and query handlers with their corresponding commands and queries.
 
 4. Dispatching Commands and Queries:
 
     - Use the ```CommandBus``` facade to dispatch commands:
 
         ```php
-        use PatrickQuijano\LaravelMediator\Facades\CommandBus;
+        use LaravelMediator\Facades\CommandBus;
 
         $command = new YourCommand();
         CommandBus::dispatch($command);
@@ -41,7 +41,7 @@ composer require patrickquijano/laravel-mediator
 
     - Use the ```QueryBus``` facade to dispatch queries:
         ```php
-        use PatrickQuijano\LaravelMediator\Facades\QueryBus;
+        use LaravelMediator\Facades\QueryBus;
 
         $query = new YourQuery();
         $result = QueryBus::dispatch($query);
@@ -59,11 +59,11 @@ composer require patrickquijano/laravel-mediator
 
     namespace App\Providers;
 
-    use PatrickQuijano\LaravelMediator\Abstracts\Providers\HandlersServiceProvider;
     use App\Handlers\MyCommandHandler;
     use App\Handlers\MyQueryHandler;
     use App\Commands\MyCommand;
     use App\Queries\MyQuery;
+    use LaravelMediator\Abstracts\Providers\HandlersServiceProvider;
 
     class MyHandlersServiceProvider extends HandlersServiceProvider
     {
