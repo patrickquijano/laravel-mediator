@@ -5,12 +5,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "PatrickQuijano\\LaravelMediator\\": "src/"
+            "LaravelMediator\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PatrickQuijano\\LaravelMediator\\Tests\\": "tests/"
+            "LaravelMediator\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -22,11 +22,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "PatrickQuijano\\LaravelMediator\\Providers\\LaravelMediatorServiceProvider"
+                "LaravelMediator\\Providers\\LaravelMediatorServiceProvider"
             ],
             "aliases": {
-                "CommandBus": "PatrickQuijano\\LaravelMediator\\Facades\\CommandBus",
-                "QueryBus": "PatrickQuijano\\LaravelMediator\\Facades\\QueryBus"
+                "CommandBus": "LaravelMediator\\Facades\\CommandBus",
+                "QueryBus": "LaravelMediator\\Facades\\QueryBus"
             }
         }
     },
@@ -43,6 +43,7 @@
     },
     "scripts": {
         "pint": "@php vendor/bin/pint",
-        "unit-test": "@php vendor/bin/testbench package:test --coverage --min=80"
+        "unit-test": "@php vendor/bin/testbench package:test --testsuite=Unit",
+        "unit-test-coverage": "@php vendor/bin/testbench package:test --coverage --testsuite=Unit --min=80"
     }
 }

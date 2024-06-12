@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PatrickQuijano\LaravelMediator\Tests\Unit\Buses;
+namespace LaravelMediator\Tests\Unit\Buses;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Bus;
-use PatrickQuijano\LaravelMediator\Abstracts\Buses\Query;
-use PatrickQuijano\LaravelMediator\Buses\QueryBus;
-use PatrickQuijano\LaravelMediator\Tests\Unit\TestCase as AbstractTestCase;
+use LaravelMediator\Abstracts\Buses\Query;
+use LaravelMediator\Buses\QueryBus;
+use LaravelMediator\Tests\Unit\TestCase as AbstractTestCase;
 
 class QueryBusTest extends AbstractTestCase
 {

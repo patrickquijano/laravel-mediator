@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PatrickQuijano\LaravelMediator\Providers;
+namespace LaravelMediator\Providers;
 
 use Illuminate\Support\ServiceProvider as AbstractServiceProvider;
 
@@ -14,7 +14,7 @@ class LaravelMediatorServiceProvider extends AbstractServiceProvider
      * @var array
      */
     public $singletons = [
-        \PatrickQuijano\LaravelMediator\Contracts\Buses\CommandBus::class => \PatrickQuijano\LaravelMediator\Buses\CommandBus::class,
-        \PatrickQuijano\LaravelMediator\Contracts\Buses\QueryBus::class => \PatrickQuijano\LaravelMediator\Buses\QueryBus::class,
+        \LaravelMediator\Contracts\Buses\CommandBus::class => \LaravelMediator\Buses\CommandBus::class,
+        \LaravelMediator\Contracts\Buses\QueryBus::class => \LaravelMediator\Buses\QueryBus::class,
     ];
 }

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PatrickQuijano\LaravelMediator\Tests\Unit\Buses;
+namespace LaravelMediator\Tests\Unit\Buses;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Bus;
-use PatrickQuijano\LaravelMediator\Abstracts\Buses\Command;
-use PatrickQuijano\LaravelMediator\Buses\CommandBus;
-use PatrickQuijano\LaravelMediator\Tests\Unit\TestCase as AbstractTestCase;
+use LaravelMediator\Abstracts\Buses\Command;
+use LaravelMediator\Buses\CommandBus;
+use LaravelMediator\Tests\Unit\TestCase as AbstractTestCase;
 
 class CommandBusTest extends AbstractTestCase
 {

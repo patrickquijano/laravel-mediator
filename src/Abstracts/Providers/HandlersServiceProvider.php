@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PatrickQuijano\LaravelMediator\Abstracts\Providers;
+namespace LaravelMediator\Abstracts\Providers;
 
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\ServiceProvider as AbstractServiceProvider;
