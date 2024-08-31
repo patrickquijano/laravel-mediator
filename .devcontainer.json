@@ -20,6 +20,7 @@
         "donjayamanne.githistory",
         "dotenv.dotenv-vscode",
         "eamodio.gitlens",
+        "github.vscode-github-actions",
         "henriiik.vscode-sort",
         "junstyle.php-cs-fixer",
         "m1guelpf.better-pest",
