@@ -14,8 +14,19 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        php-version: [ '8.3' ]
+
     steps:
     - uses: actions/checkout@v4
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-version }}
+        coverage: pcov
+        tools: composer:v2
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
@@ -30,7 +41,7 @@ jobs:
           ${{ runner.os }}-php-
 
     - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
 
     - name: Run test suite
       run: composer run-script unit-test-coverage
