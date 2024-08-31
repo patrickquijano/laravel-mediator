@@ -1,7 +1,7 @@
 {
-  "name": "PHP - Laravel",
+  "name": "PHP",
   "dockerComposeFile": [
-    "../docker-compose.devcontainer.yml"
+    "./compose.devcontainer.yml"
   ],
   "service": "php",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
