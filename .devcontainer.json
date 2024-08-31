@@ -1,7 +1,7 @@
 {
-  "name": "PHP - Laravel",
+  "name": "PHP",
   "dockerComposeFile": [
-    "../docker-compose.devcontainer.yml"
+    "./compose.devcontainer.yml"
   ],
   "service": "php",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
@@ -20,6 +20,7 @@
         "donjayamanne.githistory",
         "dotenv.dotenv-vscode",
         "eamodio.gitlens",
+        "github.vscode-github-actions",
         "henriiik.vscode-sort",
         "junstyle.php-cs-fixer",
         "m1guelpf.better-pest",

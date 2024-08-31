@@ -1,0 +1,15 @@
+name: ${DEVCONTAINER_NAME}
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./docker/devcontainer/php/Dockerfile
+      args:
+        - PHP_VERSION=${PHP_VERSION}
+    tty: true
+    environment:
+      - PHP_CS_FIXER_IGNORE_ENV=1
+    extra_hosts:
+      - host.docker.network:host-gateway
+    volumes:
+      - ../:/workspaces:cached
