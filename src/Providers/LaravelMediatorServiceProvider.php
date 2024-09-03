@@ -28,7 +28,7 @@ class LaravelMediatorServiceProvider extends AbstractServiceProvider
 
     public function boot(): void
     {
-        $this->publishes([__DIR__.'/../../config/mediator.php' => config_path('mediator.php')], 'config');
+        $this->publishes([__DIR__.'/../../config/mediator.php' => config_path('mediator.php')], 'mediator-config');
         $eventsMap = Cache::rememberForever(self::CACHE_KEY, function () {
             return $this->app->make(DiscoverEventsService::class)->handle();
         });
