@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace LaravelMediator\Contracts\Services\Mediator;
 
-interface DiscoverEventsService
+interface GetBusEventsService
 {
-    public function handle(): array;
+    public function handle(array $events): array;
 }

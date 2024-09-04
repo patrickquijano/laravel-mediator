@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace LaravelMediator\Contracts\Services\Mediator;
 
-interface GetEventForListenerService
+interface GetEventsService
 {
-    public function handle(string $listener): ?string;
+    public function handle(): ?array;
 }

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace LaravelMediator\Tests\Unit\Providers;
 
 use Illuminate\Support\Facades\Bus;
-use Illuminate\Support\Facades\Cache;
-use LaravelMediator\Contracts\Services\Mediator\DiscoverEventsService;
+use LaravelMediator\Contracts\Services\Mediator\GetBusEventsService;
+use LaravelMediator\Contracts\Services\Mediator\GetEventsService;
 use LaravelMediator\Providers\LaravelMediatorServiceProvider;
 use LaravelMediator\Tests\Unit\TestCase as AbstractTestCase;
 use Mockery;
@@ -22,27 +22,26 @@ class LaravelMediatorServiceProviderTest extends AbstractTestCase
     public function test_boot_method()
     {
         // Arrange
-        $discoverEventsServiceMock = Mockery::mock(DiscoverEventsService::class);
-        $discoverEventsServiceMock->shouldReceive('handle')
+        $eventsServiceMock = Mockery::mock(GetEventsService::class);
+        $busEventsServiceMock = Mockery::mock(GetBusEventsService::class);
+        $eventsServiceMock->shouldReceive('handle')
             ->once()
-            ->andReturn(['Event' => 'Listener']);
-        $this->app->instance(DiscoverEventsService::class, $discoverEventsServiceMock);
-        Cache::shouldReceive('rememberForever')
+            ->andReturn(['event' => ['listener']]);
+        $busEventsServiceMock->shouldReceive('handle')
             ->once()
-            ->with(LaravelMediatorServiceProvider::CACHE_KEY, Mockery::on(function ($callback) {
-                return $callback() === ['Event' => 'Listener'];
-            }))
-            ->andReturn(['Event' => 'Listener']);
+            ->with(['event' => ['listener']])
+            ->andReturn(['event' => 'listener']);
+        $this->app->instance(GetEventsService::class, $eventsServiceMock);
+        $this->app->instance(GetBusEventsService::class, $busEventsServiceMock);
         Bus::shouldReceive('map')
             ->once()
-            ->with(['Event' => 'Listener']);
+            ->with(['event' => 'listener']);
         // Act
         $serviceProvider = new LaravelMediatorServiceProvider($this->app);
         $serviceProvider->register();
         $this->app->booted(function () use ($serviceProvider) {
             $serviceProvider->boot();
         });
-        $this->app->boot();
         // Assert
         $this->assertTrue(true);
     }
@@ -62,16 +61,12 @@ class LaravelMediatorServiceProviderTest extends AbstractTestCase
             $this->app->make(\LaravelMediator\Contracts\Buses\QueryBus::class)
         );
         $this->assertInstanceOf(
-            \LaravelMediator\Services\Mediator\DiscoverEventsService::class,
-            $this->app->make(\LaravelMediator\Contracts\Services\Mediator\DiscoverEventsService::class)
+            \LaravelMediator\Services\Mediator\GetBusEventsService::class,
+            $this->app->make(\LaravelMediator\Contracts\Services\Mediator\GetBusEventsService::class)
         );
         $this->assertInstanceOf(
-            \LaravelMediator\Services\Mediator\GetClassFromFileService::class,
-            $this->app->make(\LaravelMediator\Contracts\Services\Mediator\GetClassFromFileService::class)
-        );
-        $this->assertInstanceOf(
-            \LaravelMediator\Services\Mediator\GetEventForListenerService::class,
-            $this->app->make(\LaravelMediator\Contracts\Services\Mediator\GetEventForListenerService::class)
+            \LaravelMediator\Services\Mediator\GetEventsService::class,
+            $this->app->make(\LaravelMediator\Contracts\Services\Mediator\GetEventsService::class)
         );
     }
 
